@@ -1,0 +1,80 @@
+
+
+######################################################################################################
+######################################################################################################
+######################################################################################################
+import tkinter as tk
+from re import split
+root = tk.Tk()
+root.geometry("400x700")
+
+#def replaceWord(one_string):
+
+
+    #return dictNew
+
+def getTextInput():
+#1    mydict = {}
+    result=textExample.get("1.0","end")
+#1    mydict[len(list(filter(None, split(r'\n', result))))] = list(filter(None, split(r'\n', result)))
+    alltext = list(filter(None, split(r'\n', result)))
+    one_string = {}
+    for row in range(len(alltext)):
+        one_string[row] = list(filter(None, split(r'\s+', alltext[row])))
+    dictOriginal = ['L1:', 'L1']
+    dictReplace = ['N1', 'N1']
+    #for key, value in one_string.items():
+        #for row in range(len(value)):
+            #if value[row] in dictOriginal:
+                #print(value, 'value')
+                #print(value[row], 'value row')
+                #print(dictOriginal.index(value[row]))
+    print(alltext)
+    #print(one_string)
+#        print(key, value)
+
+
+textExample=tk.Text(root, height=42, width=100)
+textExample.pack()
+btnRead=tk.Button(root, height=1, width=10, text="Read",
+                    command=getTextInput)
+
+btnRead.pack()
+root.mainloop()
+######################################################################################################
+######################################################################################################
+######################################################################################################
+# from tkinter import *
+#
+# class App:
+#     def __init__(self, root):
+#         self.root = root
+#         self.entry = Entry(self.root) #entry to input number of entries later
+#         self.button = Button(self.root, text="ok", command=self.command) #calls command to draw the entry boxes
+#         self.frame = Frame(self.root)
+#         self.entry.pack()
+#         self.button.pack()
+#         self.frame.pack()
+#     def command(self):
+#         self.frame.destroy() #destroys frame and contents
+#         self.frame = Frame(self.root) #recreates frame
+#         self.text = [] #empty array to store entry boxes
+#         for i in range(int(self.entry.get())):
+#             self.text.append(Entry(self.frame, text="Question "+str(i))) #creates entry boxes
+#             self.text[i].pack()
+#         self.done = Button(self.frame, text="Done", command=self.dict) #button to call dictionary entry and print
+#         self.done.pack()
+#         self.frame.pack()
+#     def dict(self):
+#         self.dict = {}
+#         for i in range(len(self.text)):
+#             self.dict.update({self.text[i].cget("text"): self.text[i].get()})
+#             #the above line adds a new dict entry with the text value of the respective entry as the key and the value of the entry as the value
+#         print(self.dict) #prints the dict
+#
+# root = Tk()
+# App(root)
+# root.mainloop()
+######################################################################################################
+######################################################################################################
+######################################################################################################
